@@ -7,7 +7,6 @@ let ListCont = document.getElementById("list-container");
 function addTask(){
     if(inputBox.value === ""){
         alert("You Must write Somthing!");
-        return;
     }
     else{
         let li = document.createElement("li");
@@ -19,15 +18,29 @@ function addTask(){
     }
 
     inputBox.value = "";
+    saveData();
 }
 
 ListCont.addEventListener('click', function (e) {
     
     if (e.target.tagName === "li") {   
         e.target.classList.toggle("checked");
+        saveData()
     }
      else if (e.target.tagName === "span") {
         e.target.parentElement.remove();
+        saveData()
     }
 
 }, false);
+
+
+function saveData() {
+    localStorage.setItem("data",ListCont.innerHTML);
+}
+
+function showTask() {   
+    ListCont.innerHTML  = localStorage.getItem("data");
+
+}
+showTask()
