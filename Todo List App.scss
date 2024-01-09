@@ -11,22 +11,25 @@ width: 100%;
 min-height: 100vh;
 background: linear-gradient(135deg , #153677, #4e085f);
 padding: 10px;
-
-}
-.Todo-app{
-    width: 100%;
-    max-width: 540px;
-  background: #ffffff;
-  margin: 100px auto 20px;
-padding: 40px 30px 70px;
-border-radius: 10px;
+// background-color:pink;
 }
 
-.Todo-app h1{
+#Todoapp{
+     width: 100%;
+     max-width: 540px;
+   background: #ffffff;
+   margin: 100px auto 20px;
+   padding: 40px 30px 70px;
+   border-radius: 10px;
+}
+
+
+#Todoapp h1{
     color: #002765;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    font-style: to-lower-case;
 
     img{
         width: 75px;
@@ -51,9 +54,27 @@ input{
     outline: none;
     background: transparent;
     padding: 12px;
+    margin-bottom: 2%;
 }
+#BtnColor{
+    padding: 6px;
+    margin-bottom: 2%;
+}
+
+#input{
+    background-color: #e2e0e0;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 18%;
+    height: 4vh;
+}
+
+
 button{
     border: none;
+    // font-weight: ;
     outline: none;
     padding: 16px 50px;
     background: #ff5945;
@@ -74,8 +95,8 @@ ul li{
  padding: 12px 8px 12px 50px;
  user-select: none;
  cursor: pointer;
+ margin: 1.5%;
  position: relative;
-
 }
 
 ul li::before{
@@ -120,3 +141,7 @@ ul li span{
 
 }
 
+#Todoapp i{
+    margin-left: 40%;
+    cursor: pointer;
+}
