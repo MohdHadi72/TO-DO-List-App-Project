@@ -1,6 +1,6 @@
 
 let inputBox = document.getElementById("input-box");
-let ListCont = document.getElementById("list-container");
+let listContainer = document.getElementById("list-container");
 
 
 
@@ -11,7 +11,8 @@ function addTask(){
     else{
         let li = document.createElement("li");
         li.innerHTML = inputBox.value;
-        ListCont.appendChild(li);
+        li.style.color = "red";
+        listContainer.appendChild(li);
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
         li.appendChild(span);
@@ -21,13 +22,13 @@ function addTask(){
     saveData();
 }
 
-ListCont.addEventListener('click', function (e) {
+listContainer.addEventListener('click', function (e) {
     
-    if (e.target.tagName === "li") {   
+    if (e.target.tagName === "LI") {   
         e.target.classList.toggle("checked");
         saveData()
     }
-     else if (e.target.tagName === "span") {
+     else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData()
     }
@@ -36,11 +37,13 @@ ListCont.addEventListener('click', function (e) {
 
 
 function saveData() {
-    localStorage.setItem("data",ListCont.innerHTML);
+    localStorage.setItem("data",listContainer.innerHTML);
+    localStorage.style.color = "red";
+    
 }
 
 function showTask() {   
-    ListCont.innerHTML  = localStorage.getItem("data");
+    listContainer.innerHTML  = localStorage.getItem("data");
 
 }
-showTask()
+showTask();
